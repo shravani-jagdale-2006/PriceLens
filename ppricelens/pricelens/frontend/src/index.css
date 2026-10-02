@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F6F8FD;
+    color: #1E293B;
+  }
+}
+
+@layer components {
+  /* Frosted Glass Panels */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 30px -5px rgba(91, 95, 239, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-panel-hover:hover {
+    background: rgba(255, 255, 255, 0.88);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -10px rgba(91, 95, 239, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 24px -4px rgba(31, 38, 135, 0.05);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  /* Pill Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-medium rounded-full px-6 py-3 bg-[#5B5FEF] text-white shadow-md shadow-brand-500/20 hover:bg-brand-600 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-medium rounded-full px-6 py-3 bg-white/80 backdrop-blur-md text-slate-700 border border-white hover:bg-white hover:text-brand-600 hover:scale-[1.02] active:scale-[0.98] shadow-sm transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-deal {
+    @apply inline-flex items-center justify-center font-semibold rounded-full px-5 py-2.5 bg-[#00C896] text-white shadow-md shadow-deal-500/25 hover:bg-deal-600 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer;
+  }
+
+  .badge-best-deal {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-sm shadow-emerald-500/10;
+  }
+}
+
+/* Custom Scrollbar for sleek glass look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(240, 244, 255, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 171, 253, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 95, 239, 0.6);
+}
